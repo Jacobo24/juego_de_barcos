@@ -3,11 +3,12 @@ from clases import Case
 from clases import Conventions
 from random import choice
 from itertools import product, repeat
+from juego import ORIENTACIONES, HORIZONTAL, VERTICAL
 
 instances = []
 casillas_ocupadas = set()
 
-def __init__(self, longitud):
+def __init__(self, longitud, orientacion, tocado, hundido):
         self.longitud = longitud
         self.orientacion = choice(ORIENTACIONES)
         self.tocado = False
@@ -50,6 +51,6 @@ def __init__(self, longitud):
                 break  # break relativo al "while True:"
 
 @classmethod
-def generar_barcos(self, cls):
+def generar_barcos(cls):
         for longitud in Conventions.barcos_longitud:
-            self.longitud = longitud
+            cls(longitud, HORIZONTAL, False, False)

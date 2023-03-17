@@ -9,8 +9,6 @@ from clases.Case import *
 from clases.Barco import *
 from clases.Tablero import *
 from clases.Conventions import *
-
-
 from introducir import (
     solicitar_introducir_numero_extremo,
     solicitar_introducir_si_o_no,
@@ -60,7 +58,7 @@ def jugar_una_partida():
     """Algoritmo de una partida"""
     # Creamos un tablero de juego vacío
 
-    tablero = TaTablero()
+    tablero = Tablero()
 
     while True:
         tablero.ver()
