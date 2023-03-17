@@ -1,6 +1,13 @@
-from clases.Tablero import *
-from clases.Barco import *
-from Conventions import *
+from clases import Tablero
+from clases import Barco
+from clases.Conventions import (
+    tablero_num_lineas,
+    tablero_num_columnas,
+    generar_nombre_casilla,
+    ORIENTACIONES,
+    HORIZONTAL,
+    VERTICAL
+)
 
 
 instances = {}
@@ -32,7 +39,7 @@ def jugar(self):
   self.jugadas.add(self)
   
   if self.barco is not None:
-      if len(casilla.barco.casillas - self.casillas_jugadas) == 0:
+      if len( Tablero.casillas - self.casillas_jugadas) == 0:
           print("Hundido !!")
       else:
           print("Tocado !")
@@ -41,8 +48,8 @@ def jugar(self):
 
 @classmethod
 def generar_casillas():
-  for x, y in product(range(tablero_num_lineas),
-                      range(tablero_num_columnas)):
+  for x, y in product(range(Conventions.tablero_num_lineas),
+                      range(Conventions.tablero_num_columnas)):
       Case(x, y)
 
 def __str__(self):

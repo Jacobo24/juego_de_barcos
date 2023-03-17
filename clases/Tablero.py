@@ -1,6 +1,6 @@
-from clases.Case import *
-from clases.Barco import *
-from Conventions import *
+from clases import Case
+from clases import Barco
+from clases import Conventions
 
 
 
@@ -47,7 +47,4 @@ def ver(self):
           print(" |")
   # Ver la última línea horizontal
   print(self.trazo_horizontal + "\n\n")
-
-
-
 
