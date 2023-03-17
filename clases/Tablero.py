@@ -1,15 +1,22 @@
 from clases import Case
 from clases import Barco
 from clases import Conventions
+num_lineas = Conventions.tablero_num_lineas
+num_columnas = Conventions.tablero_num_columnas
+num2l = Conventions.generar_num_linea
+num2c = Conventions.generar_num_columna
 
-
-
+@classmethod
 def __init__(self):
 # Creamos las casillas:
   generar_casillas()
 
   # Creamos los barcos:
   generar_barcos()
+  self.casillas_jugadas = set()
+  self.etiqueta_lineas = [num2l(x) for x in range(num_lineas)]
+  self.etiqueta_columnas = [num2c(x) for x in range(num_columnas)]
+  
   
   # performance / legibilidad:
   num_lineas = Conventions.tablero_num_lineas
